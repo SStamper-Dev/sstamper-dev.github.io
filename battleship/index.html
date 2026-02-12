@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Battleship</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="header">
+        <h1>BATTLESHIP</h1>
+        <div id="status-message">Place your ships to begin!</div>
+    </div>
+
+    <div class="game-container">
+        
+        <div class="board-section">
+            <h2>YOUR FLEET</h2>
+            <div class="grid-container">
+                <div class="grid-labels-top"></div>
+                <div class="grid-labels-side"></div>
+                <div id="user-grid" class="grid"></div>
+            </div>
+        </div>
+
+        <div class="controls-section">
+            
+            <div id="scoreboard" style="display:none;">
+                <div class="score-box">
+                    <span class="score-label">ENEMY SHIPS</span>
+                    <span id="cpu-score" class="score-val">5</span>
+                </div>
+                <div class="vs">VS</div>
+                <div class="score-box">
+                    <span class="score-label">YOUR SHIPS</span>
+                    <span id="user-score" class="score-val">5</span>
+                </div>
+            </div>
+
+            <div id="setup-panel">
+                <h3>Deploy Ships</h3>
+                <p>Click a ship, then click the grid.</p>
+                <div id="ship-selector">
+                    <button class="ship-btn" onclick="selectShip(2, 'Destroyer', this)">Destroyer (2)</button>
+                    <button class="ship-btn" onclick="selectShip(3, 'Submarine', this)">Submarine (3)</button>
+                    <button class="ship-btn" onclick="selectShip(3, 'Cruiser', this)">Cruiser (3)</button>
+                    <button class="ship-btn" onclick="selectShip(4, 'Battleship', this)">Battleship (4)</button>
+                    <button class="ship-btn" onclick="selectShip(5, 'Carrier', this)">Carrier (5)</button>
+                </div>
+                <div class="orientation-controls">
+                    <label>Orientation:</label>
+                    <button id="rotate-btn" onclick="toggleOrientation()">Horizontal</button>
+                </div>
+                <button id="start-btn" onclick="startGame()" disabled>START GAME</button>
+                <button onclick="resetPlacement()">Reset Board</button>
+            </div>
+            
+            <div id="game-panel" style="display:none;">
+                <h3>Battle Log</h3>
+                <div id="battle-log">Game Started...</div>
+                <button onclick="location.reload()">New Game</button>
+            </div>
+        </div>
+
+        <div class="board-section">
+            <h2>ENEMY WATERS</h2>
+            <div class="grid-container">
+                <div class="grid-labels-top"></div>
+                <div class="grid-labels-side"></div>
+                <div id="cpu-grid" class="grid locked"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="game-over-message"></div>
+
+    <audio id="snd-hit" src="boom_small.mp3"></audio>
+    <audio id="snd-sunk" src="boom_big.mp3"></audio>
+    <audio id="snd-win" src="fanfare.mp3"></audio>
+    <audio id="snd-lose" src="defeat.mp3"></audio>
+
+    <script src="app.js"></script>
+</body>
+</html>
