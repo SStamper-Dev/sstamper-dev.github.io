@@ -1,2 +1,2 @@
 # sstamper-dev.github.io
-Hello! My name is Seth Stamper. I'm a senior Computer Science student at Clemson University with a Minor in Cybersecurity.
+[![Watch the video](https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg)](https://www.youtube.com/watch?v=XYZ9eU9Hjd0)
