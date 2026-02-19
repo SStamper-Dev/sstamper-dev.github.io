@@ -20,12 +20,14 @@
             </p>
         </header>
 
-        <div class="video-wrapper">
-            <video controls playsinline preload="metadata" poster="thumbnail.png" class="portfolio-video">
-                <source src="Team5milestone5.mp4#t=199" type="video/mp4">
-                Your browser does not support the video tag. 
-                <a href="Team5milestone5.mp4">Click here to download the video directly.</a>
-            </video>
+        <div class="video-wrapper" id="video-container">
+            <div class="video-facade" onclick="activateVideo()">
+                <img src="thumbnail.png" alt="Project Showcase" class="facade-img">
+                <div class="play-overlay">
+                    <div class="play-icon"></div>
+                    <span>Click to Initialize Showcase</span>
+                </div>
+            </div>
         </div>
 
         <div class="btn-group">
