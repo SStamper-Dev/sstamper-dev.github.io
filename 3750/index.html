@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pizza Order Pro Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="stat-card"><h3>Total Orders</h3><p id="statTotal">0</p></div>
+        <div class="stat-card"><h3>Top Topping</h3><p id="statTopTopping">-</p></div>
+    </div>
+
+    <div class="main-grid">
+        <div class="form-container">
+            <h2>New Order</h2>
+            <form id="orderForm">
+                <input type="hidden" name="action" value="add">
+                
+                <label>Size</label>
+                <select name="size">
+                    <option>Small</option><option>Medium</option><option selected>Large</option>
+                </select>
+
+                <label>Crust</label>
+                <select name="crust">
+                    <option>Thin</option><option selected>Regular</option><option>Deep Dish</option>
+                </select>
+
+                <label>Toppings</label>
+                <select name="t1" class="topping-select"></select>
+                <select name="t2" class="topping-select"></select>
+                <select name="t3" class="topping-select"></select>
+
+                <label>Order Type</label>
+                <select name="type">
+                    <option>Dine-in</option><option>Pickup</option><option selected>Delivery</option>
+                </select>
+
+                <button type="submit" class="btn-add">Place Order 🍕</button>
+            </form>
+        </div>
+
+        <div>
+            <h2 id="pageTitle">Active Orders</h2>
+            <div class="filter-bar">
+    <div class="control-group">
+        <label>Show</label>
+        <select id="pageSizeSelect" onchange="changePageSize(this.value)">
+            <option value="5">5</option>
+            <option value="10" selected>10</option>
+            <option value="20">20</option>
+            <option value="50">50</option> </select>
+    </div>
+
+    <div class="control-group">
+        <label>Sort By</label>
+        <select id="sortSelect" onchange="loadPizzas()">
+            <option value="id_desc">Date (Newest)</option>
+            <option value="id_asc">Date (Oldest)</option>
+            <option value="size_asc">Size (S -> L)</option>
+            <option value="size_desc">Size (L -> S)</option>
+        </select>
+    </div>
+
+    <div class="control-group">
+        <label>Filter Topping</label>
+        <select id="filterTopping" onchange="loadPizzas()">
+            <option value="">All Toppings</option>
+            </select>
+    </div>
+</div>
+            <div id="orderGrid" class="order-grid"></div>
+            <div class="pagination-nav" id="pagination"></div>
+        </div>
+    </div>
+
+    <div id="editModal" class="modal">
+        <form id="editForm" class="modal-content">
+            <h3>Edit Pizza Order</h3>
+            <input type="hidden" name="action" value="update">
+            <input type="hidden" name="id" id="editId">
+            <input type="hidden" name="page" id="editPageHidden">
+
+            <label>Size</label><select name="size" id="editSize"><option>Small</option><option>Medium</option><option>Large</option></select>
+            <label>Crust</label><select name="crust" id="editCrust"><option>Thin</option><option>Regular</option><option>Deep Dish</option></select>
+            <label>Topping 1</label><select name="t1" id="editT1" class="topping-select"></select>
+            <label>Topping 2</label><select name="t2" id="editT2" class="topping-select"></select>
+            <label>Topping 3</label><select name="t3" id="editT3" class="topping-select"></select>
+            <label>Type</label><select name="type" id="editType"><option>Dine-in</option><option>Pickup</option><option>Delivery</option></select>
+
+            <div style="display:flex; gap:10px; margin-top:20px;">
+                <button type="submit" style="background:#28a745; color:white;">Update</button>
+                <button type="button" onclick="closeModal()">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
