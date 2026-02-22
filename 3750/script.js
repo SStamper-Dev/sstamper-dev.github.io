@@ -102,7 +102,10 @@ function renderGrid(data, pageSize) {
 
     grid.innerHTML = paginatedData.map(p => `
         <div class="order-card">
-            <img src="${getPizzaImage(p.size, p.crust)}" alt="Pizza" class="pizza-img">
+            <img src="${getPizzaImage(p.size, p.crust)}" 
+             alt="${p.size} ${p.crust}" 
+             class="pizza-img"
+             onerror="this.onerror=null; this.src='images/placeholder.jpg';">
             
             <h4>${p.size} ${p.crust}</h4> 
             
