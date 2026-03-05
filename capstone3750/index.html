@@ -1,0 +1,42 @@
+<div id="view-login" class="view">
+    <h1>Welcome!</h1>
+    <input type="text" id="username-input" placeholder="Enter Username">
+    <button id="login-btn">Enter</button>
+</div>
+
+<div id="view-lobby" class="view" style="display:none;">
+    <p>USER ID: <span id="display-player-id">#</span></p>
+    <div class="lobby-actions">
+        <section>
+            <h2>Join</h2>
+            <input type="number" id="join-id-input" placeholder="CODE?">
+            <button id="join-btn">JOIN</button>
+        </section>
+        <hr>
+        <section>
+            <button id="show-create-btn">CREATE</button>
+        </section>
+    </div>
+</div>
+
+<div id="view-create" class="view" style="display:none;">
+    <h1>Creating Game</h1>
+    <table>
+        <tr><td>Grid Size:</td><td><input type="number" id="grid-size" min="5" max="15" value="10"></td></tr>
+        <tr><td>Num of Players:</td><td><input type="number" id="max-players" min="2" max="10" value="2"></td></tr>
+    </table>
+    <button id="submit-create-btn">Submit</button>
+</div>
+
+<div id="view-metadata" class="view" style="display:none;">
+    <div class="meta-sidebar">
+        <p>NUM OF PLAYERS = <span id="meta-active-count">X</span></p>
+        <p>CURRENT TURN INDEX = <span id="meta-turn">X</span></p>
+    </div>
+    <div class="meta-main">
+        <p>Game ID = <span id="meta-game-id">X</span></p>
+        <p>Grid Size = <span id="meta-grid-size">X</span></p>
+        <p>Max Players = <span id="meta-max-players">X</span></p>
+        <p>Game State = <span id="meta-status">X</span></p>
+    </div>
+</div>
