@@ -77,6 +77,27 @@ h1 {
     border-left: 30px solid white;
 }
 
+.featured-section {
+    margin-top: 60px; 
+    text-align: center;
+}
+
+.featured-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.featured-header p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--text-color);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* My Buttons */
 .btn-group {
     display: flex;
@@ -131,5 +152,17 @@ h1 {
 .btn-linkedin:hover {
     background-color: transparent;
     color: var(--accent-linkedin);
+    transform: translateY(-3px);
+}
+
+.btn-code {
+    background-color: var(--gray-button);
+    color: var(--white);
+    border: 2px solid var(--gray-button);
+}
+
+.btn-code:hover {
+    background-color: var(--gray-hover);
+    border-color: var(--gray-hover);
     transform: translateY(-3px);
 }
