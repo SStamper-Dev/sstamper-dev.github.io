@@ -7,6 +7,8 @@
     --accent-linkedin: #0077b5;
     --white: #ffffff;
     --shadow: rgba(26, 54, 93, 0.1);
+    --charcoal-ash: #36454f;
+    --ash-hover: #242d34;
 }
 
 body {
@@ -156,13 +158,16 @@ h1 {
 }
 
 .btn-code {
-    background-color: var(--gray-button);
-    color: var(--white);
-    border: 2px solid var(--gray-button);
+    background-color: var(--charcoal-ash);
+    color: #ffffff !important;
+    border: 2px solid var(--charcoal-ash);
+    text-shadow: none;
 }
 
 .btn-code:hover {
-    background-color: var(--gray-hover);
-    border-color: var(--gray-hover);
+    background-color: var(--ash-hover);
+    border-color: var(--ash-hover);
+    color: #ffffff !important;
     transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
