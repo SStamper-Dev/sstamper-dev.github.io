@@ -171,3 +171,50 @@ h1 {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
+.demo-container {
+    margin: 30px auto;
+    max-width: 600px;
+}
+
+.live-demo-image-link {
+    display: block;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 3px solid var(--accent-gold); /* Tie in your gold accent */
+}
+
+.live-demo-image-link:hover {
+    transform: scale(1.02);
+    box-shadow: 0 25px 50px rgba(212, 175, 55, 0.3);
+    cursor: pointer;
+}
+
+.demo-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(0.7); /* Darken slightly to make overlay pop */
+    transition: filter 0.3s ease;
+}
+
+.live-demo-image-link:hover .demo-img {
+    filter: brightness(0.9);
+}
+
+.image-overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    pointer-events: none;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+}
